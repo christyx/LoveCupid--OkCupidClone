@@ -31,6 +31,8 @@ def upgrade():
                         length=255), nullable=False),
                     sa.Column('lookingfor', sa.String(
                         length=6), nullable=False),
+                    sa.Column('image', sa.String(
+                        length=255), nullable=False),
                     sa.PrimaryKeyConstraint('id'),
                     sa.UniqueConstraint('email'),
                     )

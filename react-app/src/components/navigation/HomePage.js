@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './navigation.css';
+import UsersList from '../UsersList'
 
 const HomePage = () => {
   const user = useSelector(state => state.session.user);
@@ -33,7 +34,7 @@ const HomePage = () => {
 
   return (
     <div>
-      My home page now
+      <UsersList />
     </div>
   )
 }

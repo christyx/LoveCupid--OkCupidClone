@@ -34,6 +34,9 @@ function User() {
       <li>
         <strong>lookingfor</strong> {user.lookingfor}
       </li>
+      <li>
+        <strong>image</strong> {user.image}
+      </li>
     </ul>
   );
 }

@@ -28,32 +28,28 @@ const NavBar = () => {
 
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
+    <nav className='nb_all_login'>
+      <div className='nb_left_wrapper'>
+        <NavLink className='nb_left_text' to='/' exact={true} activeClassName='active'>lovecupid</NavLink>
+        {/* <div className='nb_left_text'>lovecupid</div> */}
+      </div>
+      <div className='nb_right_wrapper'>
+        <NavLink className='nb_right_home' to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
+
+        <NavLink className='nb_right_home' to='/likes' exact={true} activeClassName='active'>
+            Likes
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
+
+        <NavLink className='nb_right_home' to='/profile' exact={true} activeClassName='active'>
+            Profile
           </NavLink>
-        </li>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
+
+        <LogoutButton className='nb_right_home' />
+      </div>
+
+
     </nav>
   );
 }

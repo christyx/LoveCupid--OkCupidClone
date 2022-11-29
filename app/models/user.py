@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     lookingfor = db.Column(db.String(6), nullable=False)
+    image = db.Column(db.String(255), nullable=False)
 
     @property
     def password(self):
@@ -31,5 +32,6 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'firstname': self.firstname,
             'email': self.email,
-            'lookingfor_women': self.lookingfor
+            'lookingfor': self.lookingfor,
+            'image': self.image
         }

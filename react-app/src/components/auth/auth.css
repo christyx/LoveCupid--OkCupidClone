@@ -47,8 +47,8 @@
 }
 
 .lf_signin:hover {
-  border: 2px solid pink;
-  color: pink;
+  border: 2px solid rgb(250, 168, 182);
+  color: rgb(250, 168, 182);
 }
 
 .login_input {
@@ -84,7 +84,7 @@
 
 .signup_error {
   margin-top: 10px;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -94,4 +94,17 @@
 
 .signup_error-each {
   margin-top: 10px;
+}
+
+.logout {
+  background-color: transparent;
+  border-radius: 5px;
+  margin-left: 20px;
+
+}
+
+.logout:hover {
+  background-color: rgb(250, 168, 182);
+  border-radius: 5px;
+
 }

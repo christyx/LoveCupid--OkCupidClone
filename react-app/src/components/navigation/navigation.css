@@ -62,10 +62,11 @@
 }
 
 .hp_join:hover {
-  color: #eeb5bb;
+  color: rgb(250, 168, 182);
 }
+
 .nb_left_text {
-  color: #eeb5bb;
+  color: rgb(250, 168, 182);
   text-shadow: -1px 1px 2px black;
   font-size: 22px;
   font-weight: 900;
@@ -87,18 +88,40 @@
   align-items: center;
 
 }
-.nb_right_text{
+
+.nb_right_text {
   margin-right: 10px;
 }
 
-.nb_right_signin{
-text-decoration: none;
-border: 1px solid black;
-padding: 3px 15px 3px 15px;
-border-radius: 5px;
-color: black;
+.nb_right_signin {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 3px 15px 3px 15px;
+  border-radius: 5px;
+  color: black;
 }
 
 .nb_right_signin:hover {
   color: gray;
+}
+
+.nb_all_login {
+  padding: 30px 60px 30px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: beige
+}
+
+.nb_right_home {
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  margin: 3px 25px 3px 25px;
+  color: black;
+  font-weight: bold;
+}
+
+.nb_right_home:hover {
+  color: rgb(250, 168, 182);
+  border-bottom: 3px solid rgb(250, 168, 182);
 }

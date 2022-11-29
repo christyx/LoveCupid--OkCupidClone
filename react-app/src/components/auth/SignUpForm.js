@@ -11,6 +11,8 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [lookingfor, setLookingfor] = useState('')
+  const [image, setImage] = useState('')
+
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -18,7 +20,7 @@ const SignUpForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       setErrors([]);
-      const data = await dispatch(signUp(firstname, email, password, lookingfor));
+      const data = await dispatch(signUp(firstname, email, password, lookingfor, image));
       if (data) {
         return setErrors(data)
       }
@@ -45,6 +47,9 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateImage = (e) => {
+    setImage(e.target.value);
+  };
   if (user) {
     return <Redirect to='/' />;
   }
@@ -108,6 +113,16 @@ const SignUpForm = () => {
         placeholder='Enter men or women'
         ></input>
       </div>
+        <div>
+          <label>Image Url</label>
+          <input className='login_input'
+            type='text'
+            name='image'
+            onChange={updateImage}
+            value={image}
+            placeholder='.jpg or .jpeg'
+          ></input>
+        </div>
         <button className='lf_signin' type='submit'>Sign Up</button>
     </form>
      </div >

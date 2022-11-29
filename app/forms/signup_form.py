@@ -47,6 +47,14 @@ def lookingfor_valid(form, field):
             'Please type either men or women')
 
 
+def image_valid(form, field):
+    # Checking if username is already in use
+    image = field.data
+
+    if not image.__contains__('.png' or '.PNG' or '.jpeg' or '.JPEG'):
+        raise ValidationError('Should ends with .png or .jpeg.')
+
+
 class SignUpForm(FlaskForm):
     firstname = StringField(
         'firstname', validators=[DataRequired(), firstname_valid])
@@ -55,3 +63,5 @@ class SignUpForm(FlaskForm):
                            DataRequired(), password_valid])
     lookingfor = StringField('lookingfor', validators=[
         DataRequired(), lookingfor_valid])
+    image = StringField('image', validators=[
+        DataRequired(), image_valid])
