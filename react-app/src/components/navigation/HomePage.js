@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './navigation.css';
-import UsersList from '../UsersList'
+import UsersList from '../Users/UsersList'
 
 const HomePage = () => {
   const user = useSelector(state => state.session.user);
@@ -11,7 +11,7 @@ const HomePage = () => {
     return (
       <div className='hp_body_wrapper'>
         <div className='hp_h1_wrapper'>
-          <h1>DATING FOR EVERY SINGLE PERSON</h1>
+          <h1 className='hp_h1'>DATING FOR EVERY SINGLE PERSON</h1>
 
         </div>
         <div className='hp_h2_wrapper'>
@@ -33,7 +33,7 @@ const HomePage = () => {
   }
 
   return (
-    <div>
+    <div className='hp_body_wrapper_login'>
       <UsersList />
     </div>
   )

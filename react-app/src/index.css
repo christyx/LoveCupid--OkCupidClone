@@ -1,9 +1,10 @@
 /* TODO Add site wide styles */
 * {
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nerko One', cursive;
+  font-size: 25px;
 }
 
 body {
   margin: 0px;
+  background-color: beige;
 }

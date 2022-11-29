@@ -68,7 +68,7 @@ const LoginForm = () => {
         </div>
         <button className='lf_signin' type='submit'>Login</button>
         <div>
-          <button className='lf_signin' type='sunmit' onClick={demoUserButton}>Demo User Login</button>
+          <button className='lf_signin' type='sunmit' onClick={demoUserButton}>Demo User</button>
         </div>
       </form>
     </div>

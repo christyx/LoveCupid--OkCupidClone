@@ -21,25 +21,30 @@
 } */
 
 .hp_h1_wrapper {
-  margin-right: 30px;
+  margin-right: 50px;
   margin-top: 160px;
-  color: white;
-  text-shadow: -4px 3px 1px black;
+  color: beige;
+  text-shadow: -3px 2px 1px black;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-  font-size: 17px;
 }
 
 .hp_h2_wrapper {
   margin-right: 80px;
   margin-top: 40px;
-  font-size: 13px;
+  font-size: 16px;
+  font-weight:lighter;
+  color: beige;
+  text-shadow: -1px 1px 5px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .hp_h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
+  font-size: 45px;
+  font-weight: bold;
 }
 
 .hp_h2 {
@@ -53,8 +58,8 @@
   border-radius: 5px;
   text-decoration: none;
   background-color: black;
-  color: white;
-  font-size: 16px;
+  color: beige;
+  font-size: 25px;
   padding: 15px 45px 15px 45px;
   margin-right: 220px;
   margin-top: 40px;
@@ -63,12 +68,15 @@
 
 .hp_join:hover {
   color: rgb(250, 168, 182);
+  font-size: 38px;
+  margin-right: 200px;
+  margin-top: 35px;
 }
 
 .nb_left_text {
   color: rgb(250, 168, 182);
   text-shadow: -1px 1px 2px black;
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 900;
   font-style: italic;
   -webkit-text-stroke-width: 1px;
@@ -124,4 +132,8 @@
 .nb_right_home:hover {
   color: rgb(250, 168, 182);
   border-bottom: 3px solid rgb(250, 168, 182);
+}
+
+.hp_body_wrapper_login {
+  background-color: beige;
 }

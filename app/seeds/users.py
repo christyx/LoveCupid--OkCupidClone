@@ -10,7 +10,7 @@ def seed_users():
     max = User(
         firstname='Max', email='max@aa.io', password='password', lookingfor='men', image='https://www.thetvaddict.com/wp-content/uploads/2013/01/Untitled-14.jpg')
     sophie = User(
-        firstname='Sophie', email='sophie@aa.io', password='password', lookingfor='men', image="https: // hopeswonderland.files.wordpress.com/2015/03/sophie-kachinsky-2-broke-girls.jpg")
+        firstname='Sophie', email='sophie@aa.io', password='password', lookingfor='men', image="https://hopeswonderland.files.wordpress.com/2015/03/sophie-kachinsky-2-broke-girls.jpg")
     serena = User(
         firstname='Serena', email='serena@aa.io', password='password', lookingfor='men', image='https://publish.purewow.net/wp-content/uploads/sites/2/2022/05/serena-van-der-woodsen-villain.jpg')
     blair = User(
