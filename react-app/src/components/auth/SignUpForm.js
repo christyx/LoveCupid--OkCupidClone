@@ -10,6 +10,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [lookingfor, setLookingfor] = useState('')
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -17,7 +18,7 @@ const SignUpForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       setErrors([]);
-      const data = await dispatch(signUp(firstname, email, password));
+      const data = await dispatch(signUp(firstname, email, password, lookingfor));
       if (data) {
         return setErrors(data)
       }
@@ -36,6 +37,9 @@ const SignUpForm = () => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
+  const updateLookingfor = (e) => {
+    setLookingfor(e.target.value)
+  }
 
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
@@ -92,6 +96,16 @@ const SignUpForm = () => {
           value={repeatPassword}
           required={true}
           placeholder='Repeat Password'
+        ></input>
+      </div>
+      <div>
+        <label>Looking For</label>
+        <input className='login_input'
+        type='text'
+        name='lookingfor'
+        onChange={updateLookingfor}
+        value={lookingfor}
+        placeholder='Enter men or women'
         ></input>
       </div>
         <button className='lf_signin' type='submit'>Sign Up</button>

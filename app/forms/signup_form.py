@@ -14,7 +14,6 @@ def user_exists(form, field):
         raise ValidationError('Should be in email format.')
 
 
-
 # def username_exists(form, field):
 #     # Checking if username is already in use
 #     username = field.data
@@ -39,6 +38,14 @@ def password_valid(form, field):
         raise ValidationError(
             'Password should be betweeen 6 and 20 charaters.')
 
+def lookingfor_valid(form, field):
+    # Checking if username is already in use
+    lookingfor = field.data
+
+    if lookingfor != 'men' and lookingfor != 'women':
+        raise ValidationError(
+            'Please type either men or women')
+
 
 class SignUpForm(FlaskForm):
     firstname = StringField(
@@ -46,3 +53,5 @@ class SignUpForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[
                            DataRequired(), password_valid])
+    lookingfor = StringField('lookingfor', validators=[
+        DataRequired(), lookingfor_valid])
