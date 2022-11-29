@@ -1,0 +1,97 @@
+.login_wrapper {
+  background-image: url('../images/login.webp');
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+}
+
+.login_form {
+  margin-top: 160px;
+  margin-left: 160px;
+  display: flex;
+  flex-direction: column;
+  color: navy;
+  font-weight: bold;
+}
+
+.login_error {
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+}
+
+.login_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 250px;
+  font-size: 16px;
+}
+
+.lf_signin {
+  text-decoration: none;
+  border: 2px solid navy;
+  padding: 3px 15px 3px 15px;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  margin: 35px;
+  color: navy;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.lf_signin:hover {
+  border: 2px solid pink;
+  color: pink;
+}
+
+.login_input {
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid navy;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.signup_wrapper {
+  background-image: url('../images/signup.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+}
+
+.signup_form {
+  margin-top: 160px;
+  margin-right: 120px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  color: navy;
+  font-weight: bold;
+}
+
+.signup_error {
+  margin-top: 10px;
+    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-end;
+
+}
+
+.signup_error-each {
+  margin-top: 10px;
+}
