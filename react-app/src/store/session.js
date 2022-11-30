@@ -3,6 +3,11 @@ const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 const GET_ALL = 'session/GET_ALL'
 
+const GET_PROFILE = 'session/GET_PROFILE'
+const CREATE_PROFILE = 'session/CREATE_PROFILE'
+const UPDATE_PROFILE = 'session/UPDATE_PROFILE'
+const DELETE_PROFILE = 'session/DELETE_PROFILE'
+
 const setUser = (user) => ({
   type: SET_USER,
   payload: user
@@ -17,7 +22,26 @@ const getUser = (users) => ({
   payload: users
 });
 
-const initialState = { allUsers: null, user: null };
+const getProfile = (profile) => ({
+  type: GET_PROFILE,
+  payload: profile
+})
+
+const createProfile = (profile) => ({
+  type: CREATE_PROFILE,
+  payload: profile
+})
+
+const updateProfile = (profile) => ({
+  type: UPDATE_PROFILE,
+  payload: profile
+})
+
+const deleteProfile = () => ({
+  type: DELETE_PROFILE
+})
+
+const initialState = { allUsers: null, user: null, profile: null };
 
 export const getAllUsers = () => async (dispatch) => {
   const response = await fetch('/api/users/');
@@ -114,6 +138,54 @@ export const signUp = (firstname, email, password, lookingfor, image) => async (
   }
 }
 
+export const getUserProfile = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/users/${userId}/profile`);
+  if (response.ok) {
+    const responseData = await response.json();
+    await dispatch(getProfile(responseData))
+  }
+}
+
+export const createUserProfile = (userId, profile) => async (dispatch) => {
+  const response = await fetch(`/api/users/${userId}/profile`, {
+    method: "POST",
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(profile)
+  })
+  if (response.ok) {
+    const newProfile = await response.json()
+    await dispatch(createProfile(newProfile, userId))
+    return newProfile
+  }
+}
+
+export const updateUserProfile = (userId, profile) => async (dispatch) => {
+  const response = await fetch(`/api/users/${userId}/profile`, {
+    method: "PUT",
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(profile)
+  })
+  if (response.ok) {
+    const newProfile = await response.json()
+    await dispatch(updateProfile(newProfile, userId))
+    return newProfile
+  }
+}
+
+export const deleteUserProfile = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/users/${userId}/profile`, {
+    method: "DELETE",
+  })
+  if (response.ok) {
+    await dispatch(deleteProfile())
+    return response
+  }
+}
+
 export default function reducer(state = initialState, action) {
   let newState = {};
   switch (action.type) {
@@ -127,6 +199,21 @@ export default function reducer(state = initialState, action) {
       return newState
     case REMOVE_USER:
       newState = { ...state, user: null }
+      return newState
+    case GET_PROFILE:
+      newState = { ...state, profile: {} }
+      newState.profile = action.payload[0]
+      return newState
+    case CREATE_PROFILE:
+      newState = {...state, profile: {}}
+      newState.profile = action.payload
+      return newState
+    case UPDATE_PROFILE:
+      newState = { ...state }
+      newState.profile = action.payload
+      return newState
+    case DELETE_PROFILE:
+      newState = { ...state, profile: {} }
       return newState
     default:
       return state;

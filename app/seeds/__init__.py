@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .likes import seed_likes, undo_likes
+from .profiles import seed_profiles, undo_profiles
 from app.models.db import db, environment, SCHEMA
 
 # Creates a seed group to hold our commands
@@ -18,8 +19,10 @@ def seed():
         # Make sure to add all your other model's undo functions below
         undo_users()
         undo_likes()
+        undo_profiles()
     seed_users()
     seed_likes()
+    seed_profiles()
     # Add other seed functions here
 
 
@@ -28,4 +31,5 @@ def seed():
 def undo():
     undo_users()
     undo_likes()
+    undo_profiles()
     # Add other undo functions here

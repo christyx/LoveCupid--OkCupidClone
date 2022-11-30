@@ -1,8 +1,45 @@
 from flask import Blueprint, jsonify, Flask, render_template, request, session, redirect, make_response
 from flask_login import login_required, current_user
-from app.models import db, User, Like
+from app.models import db, User, Like, Profile
 
 user_routes = Blueprint('users', __name__)
+
+
+# ========== Get user's likes ==============
+@user_routes.route("/<int:id>/likes")
+@login_required
+def get_user_likes(id):
+    all_likes = []
+    data = Like.query.filter(Like.user_id == id).all()
+    for lst in data:
+        all_likes.append(lst.to_dict())
+    return jsonify(all_likes)
+
+
+# ========== Create user's likes ==============
+@user_routes.route("/<int:id>/likes", methods=["POST"])
+@login_required
+def post_new_like(id):
+    data = request.get_json()
+    new_like = Like(
+        user_id=current_user.id,
+        liked_user_id=id
+    )
+    db.session.add(new_like)
+    db.session.commit()
+    return new_like.to_dict()
+
+
+# ========= Delete a like ==============
+@user_routes.route("/<int:id>/likes", methods=["DELETE"])
+@login_required
+def delete_like(id):
+    all_like = Like.query.filter(Like.liked_user_id == id).all()
+    like = all_like[0]
+
+    db.session.delete(like)
+    db.session.commit()
+    return "successfully delete a like"
 
 
 @user_routes.route('/')
@@ -24,43 +61,65 @@ def user(id):
     user = User.query.get(id)
     return user.to_dict()
 
-# ========== Get user's likes ==============
-@user_routes.route("/<int:id>/likes")
-@login_required
-def get_user_likes(id):
-    all_likes = []
-    data = Like.query.filter(Like.user_id == id).all()
+
+# ========== Get user's profiles ==============
+@user_routes.route("/<int:id>/profile")
+# @login_required
+def get_user_profile(id):
+    all_profiles =[]
+    data = Profile.query.filter(Profile.user_id == id).all()
     for lst in data:
-        all_likes.append(lst.to_dict())
-    return jsonify(all_likes)
-    # jsonify(all_likes)
-    # return [like.to_dict() for like in data]
+        all_profiles.append(lst.to_dict())
+    return jsonify(all_profiles)
 
-# ========== Create user's likes ==============
-
-@user_routes.route("/<int:id>/likes", methods=["POST"])
+# ========== Create user's profile ==============
+@user_routes.route("/<int:id>/profile", methods=["POST"])
 @login_required
-def post_new_like(id):
+def post_new_profile(id):
     data = request.get_json()
-    print('%%%%%%%%%',current_user.id)
-    new_like = Like(
-        user_id=current_user.id,
-        liked_user_id=id
+
+
+    print('&*&*&*&*&*&*',data["bio"])
+    new_profile = Profile(
+        user_id=id,
+        bio=data["bio"],
+        work=data["work"],
+        age=data["age"],
+        hometown=data["hometown"]
     )
-    db.session.add(new_like)
+    db.session.add(new_profile)
     db.session.commit()
-    return new_like.to_dict()
+    return new_profile.to_dict()
 
-# ========= Delete a like ==============
 
-@user_routes.route("/<int:id>/likes", methods=["DELETE"])
+# ========== Update user's profile ==============
+@user_routes.route("/<int:id>/profile", methods=["PUT"])
 @login_required
-def delete_like(id):
-    all_like = Like.query.filter(Like.liked_user_id == id).all()
-    like = all_like[0]
-    # like = Like.query.get(1)
+def update_new_profile(id):
+   myProfile = Profile.query.filter(Profile.user_id == id).all()
+   profileId = myProfile[0].id
+   profile = Profile.query.get(profileId)
+   if not profile:
+      return {
+         "message": "Profile not found",
+         "statusCode": 404,
+      }, 404
+   data = request.get_json()
+   profile.bio = data["bio"]
+   profile.work = data['work']
+   profile.age = data["age"]
+   profile.hometown = data["hometown"]
+   db.session.commit()
+   return profile.to_dict()
 
-    print('!!!!!!!!!!&&&this is', like)
-    db.session.delete(like)
+
+# ========== Detele user's profile ==============
+@user_routes.route("/<int:id>/profile", methods=["DELETE"])
+@login_required
+def delete_new_profile(id):
+    myProfile = Profile.query.filter(Profile.user_id == id).all()
+    profileId = myProfile[0].id
+    profile = Profile.query.get(profileId)
+    db.session.delete(profile)
     db.session.commit()
-    return "successfully delete a like"
+    return "successfully delete profile"

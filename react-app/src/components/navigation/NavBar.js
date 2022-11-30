@@ -35,16 +35,18 @@ const NavBar = () => {
       </div>
       <div className='nb_right_wrapper'>
         <NavLink className='nb_right_home' to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
+          Home
+        </NavLink>
 
         <NavLink className='nb_right_home' to='/likes' exact={true} activeClassName='active'>
-            Likes
-          </NavLink>
+          Likes
+        </NavLink>
 
         <NavLink className='nb_right_home' to='/profile' exact={true} activeClassName='active'>
-            Profile
-          </NavLink>
+          Profile
+        </NavLink>
+
+     
 
         <LogoutButton className='nb_right_home' />
       </div>
