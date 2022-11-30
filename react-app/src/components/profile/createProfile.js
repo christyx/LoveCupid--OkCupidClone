@@ -16,6 +16,15 @@ function CreateProfile() {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    setErrors([])
+
+    
+    if (!Number(age)) return setErrors(['Age must be a number'])
+    if (age < 18 || age > 99) return setErrors(['Age must be between 18 to 99'])
+    if (hometown.length > 50 || hometown.length < 2) return setErrors(['Hometown needs to be between 2 and 50 characters'])
+    if (work.length > 50 || work.length < 2) return setErrors(['Work needs to be between 2 and 50 characters'])
+    if (bio.length > 500 || bio.length < 5) return setErrors(['Bio needs to be between 5 and 500 characters'])
+
     const newProfile = {
       user_id: currentuserId,
       age,
