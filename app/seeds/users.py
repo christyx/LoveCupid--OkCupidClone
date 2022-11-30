@@ -15,6 +15,15 @@ def seed_users():
         firstname='Serena', email='serena@aa.io', password='password', lookingfor='men', image='https://publish.purewow.net/wp-content/uploads/sites/2/2022/05/serena-van-der-woodsen-villain.jpg')
     blair = User(
         firstname='Blair', email='blair@aa.io', password='password', lookingfor='men', image='https://i.pinimg.com/736x/29/43/e8/2943e8ca9e3b5f420bb827b9cc87fb19--gossip-girl-hairstyles-celebrity-hairstyles.jpg')
+    rose = User(
+        firstname='Rose', email='rose@aa.io', password='password', lookingfor='men', image='https://www.wallpaperflare.com/static/531/380/1005/titanic-kate-winslet-movies-necklace-wallpaper-preview.jpg')
+    bonnie = User(
+        firstname='Bonnie', email='bonnie@aa.io', password='password', lookingfor='men', image='https://i.pinimg.com/originals/63/db/2d/63db2d74b890bd75ce6b5495987ba239.jpg')
+    sofia = User(
+        firstname='Sofia', email='sofia@aa.io', password='password', lookingfor='men', image='https://tvline.com/wp-content/uploads/2017/02/young-and-hungry-spoilers.jpg')
+    mulan = User(
+        firstname='Mulan', email='mulan@aa.io', password='password', lookingfor='men', image='https://www.denofgeek.com/wp-content/uploads/2020/09/mulan-boycott.jpeg')
+
 
     db.session.add(demo)
     db.session.add(caroline)
@@ -22,6 +31,11 @@ def seed_users():
     db.session.add(sophie)
     db.session.add(serena)
     db.session.add(blair)
+    db.session.add(mulan)
+    db.session.add(rose)
+    db.session.add(bonnie)
+    db.session.add(sofia)
+
     db.session.commit()
 
 
