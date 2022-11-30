@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './users.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {getAllUsers} from '../../store/session'
+import { getAllMyLikes } from '../../store/like';
 
 function UsersList() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
+  const dispatch = useDispatch()
+  const id = useSelector(state => state.session.user.id)
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('/api/users/');
-      const responseData = await response.json();
-      setUsers(responseData.users);
-    }
-    fetchData();
-  }, []);
+    dispatch(getAllUsers())
+    dispatch(getAllMyLikes(id))
+  }, [dispatch, id])
+
+  const users = useSelector(state => state.session.allUsers)
+
   const currentuser = useSelector(state => state.session.user);
 
-  const userComponents = users.map((user) => {
+  const userComponents = users?.map((user) => {
 
     if (user.id !== currentuser.id) {
       return (
@@ -36,7 +39,7 @@ function UsersList() {
 
   return (
     <div className='ul_wrapper'>
-      <h2 className='ul_text'>Discover: </h2>
+      <h2 className='ul_text'>Discover : </h2>
       <div className='display_users'>{userComponents}</div>
     </ div>
   );

@@ -9,7 +9,9 @@ import UsersList from './components/Users/UsersList';
 import User from './components/Users/User';
 import HomePage from './components/navigation/HomePage';
 import Profile from './components/profile/profile';
+import Like from './components/Likes/Likes'
 import { authenticate } from './store/session';
+import { getAllUsers } from './store/session'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -18,6 +20,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getAllUsers())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -44,6 +47,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/profile' exact={true} >
           <Profile />
+        </ProtectedRoute>
+        <ProtectedRoute path='/likes' exact={true} >
+          <Like />
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <HomePage />

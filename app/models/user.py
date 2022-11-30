@@ -16,6 +16,8 @@ class User(db.Model, UserMixin):
     lookingfor = db.Column(db.String(6), nullable=False)
     image = db.Column(db.String(255), nullable=False)
 
+    likes = db.relationship("Like", back_populates="user")
+
     @property
     def password(self):
         return self.hashed_password
@@ -33,5 +35,12 @@ class User(db.Model, UserMixin):
             'firstname': self.firstname,
             'email': self.email,
             'lookingfor': self.lookingfor,
-            'image': self.image
+            'image': self.image,
+            'likes': self.list_to_dict()
         }
+
+    def list_to_dict(self):
+        ls_dict = {}
+        for ls in self.likes:
+            ls_dict[ls.to_dict()['id']] = ls.to_dict()
+        return ls_dict

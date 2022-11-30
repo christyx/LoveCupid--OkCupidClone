@@ -100,9 +100,14 @@
   background-color: transparent;
   border-radius: 5px;
   margin-left: 20px;
-
+  display: flex;
+  flex-direction: row;
 }
 
+#icon_logout {
+  margin-top: 4px;
+  margin-left: 2px;
+}
 .logout:hover {
   background-color: rgb(250, 168, 182);
   border-radius: 5px;
