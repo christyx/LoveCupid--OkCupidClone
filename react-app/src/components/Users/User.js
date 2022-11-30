@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './users.css'
+import CreateLike from '../Likes/CreateLikes';
+import DeleteLike from '../Likes/deleteLikes'
+import './users.css';
 
 function User() {
   const [user, setUser] = useState({});
@@ -28,7 +30,12 @@ function User() {
         alt='userImage'
         className="userpage_image"
       />
-      <h3 className='userpage_name'>{user.firstname}</h3>
+      <div>
+        <h3 className='userpage_name'>{user.firstname}</h3>
+
+      </div>
+      <CreateLike id={user.id}/>
+      <DeleteLike id={user.id} />
     </div>
   );
 }

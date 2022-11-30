@@ -34,7 +34,6 @@ function Like() {
         </NavLink>
       )
     }
-
   }
   )
 
@@ -45,16 +44,5 @@ function Like() {
     </ div>
   )
 
-
-  // return (
-  //   <div className='userpage_wrapper'>
-
-  //     <img src={user.image}
-  //       alt='userImage'
-  //       className="userpage_image"
-  //     />
-  //     <h3 className='userpage_name'>{user.firstname}</h3>
-  //   </div>
-  // );
 }
 export default Like;
