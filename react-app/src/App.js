@@ -18,16 +18,15 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
-  // const id = useSelector(state => state.session.user?.id)
-
+  const id = useSelector(state => state.session.user?.id)
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
       await dispatch(getAllUsers())
-      // await dispatch(getAllMyLikes(id))
+      if(id) await dispatch(getAllMyLikes(id))
       setLoaded(true);
     })();
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   if (!loaded) {
     return null;
