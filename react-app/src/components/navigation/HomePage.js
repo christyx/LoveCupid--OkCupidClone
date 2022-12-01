@@ -23,9 +23,10 @@ const HomePage = () => {
           <h2 className='hp_h2'>Meet them today!</h2>
         </div>
         {/* <div> */}
-          <NavLink className='hp_join' to='/sign-up' exact={true} activeClassName='active'>
-            JOIN LOVECUPID
-          </NavLink>
+        <NavLink className='hp_join' to='/sign-up' exact={true} activeClassName='active'>
+          JOIN LOVECUPID
+        </NavLink>
+
         {/* </div> */}
 
       </div>
