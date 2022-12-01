@@ -23,6 +23,7 @@ function Profile() {
         <img src={currentuser.image}
           alt='userImage'
           className="userpage_image"
+          onError={e => { e.currentTarget.src = "your_image_not_found_defalt_picture_here"; }}
         />
         <div>
           <h3 className='userpage_name'>Name: {currentuser.firstname}</h3>

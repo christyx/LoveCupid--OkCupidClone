@@ -9,9 +9,18 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if user:
-        raise ValidationError('Email address is already in use.')
-    if not email.__contains__('@' and '.'):
-        raise ValidationError('Should be in email format.')
+        raise ValidationError("Email address is already in use.")
+    if not email.__contains__('@'):
+        raise ValidationError('An email address should have @.')
+    if not email.__contains__('.'):
+        raise ValidationError('An email address should have a period.')
+    if len(email) > 40:
+        raise ValidationError(
+            'Email should be less than 40 charaters.')
+    # if email.__endswith__('.'):
+    #     raise ValidationError('An email address cannot end with a period.')
+    # if email.__endswith__('@'):
+    #     raise ValidationError('An email address cannot end with @.')
 
 
 # def username_exists(form, field):
@@ -51,8 +60,13 @@ def image_valid(form, field):
     # Checking if username is already in use
     image = field.data
 
-    if not image.__contains__('.png' or '.PNG' or '.jpeg' or '.JPEG'):
-        raise ValidationError('Should ends with .png or .jpeg.')
+    if not image.__contains__('.png') and not image.__contains__('.jpeg') and not image.__contains__('.jpg'):
+        raise ValidationError('Should have .png/.jpeg/.jpg')
+    if len(image) > 25:
+        raise ValidationError(
+            'Image Url should be less than 250 charaters.')
+    # if not image.__beginswith__('http://' or 'https://'):
+    #     raise ValidationError("Should begins with 'https://' or 'http://'")
 
 
 class SignUpForm(FlaskForm):

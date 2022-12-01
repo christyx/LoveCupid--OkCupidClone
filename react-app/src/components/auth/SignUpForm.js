@@ -120,7 +120,7 @@ const SignUpForm = () => {
             name='image'
             onChange={updateImage}
             value={image}
-            placeholder='.jpg or .jpeg'
+            placeholder='.png/.jpeg/.jpg'
           ></input>
         </div>
         <button className='lf_signin' type='submit'>Sign Up</button>
