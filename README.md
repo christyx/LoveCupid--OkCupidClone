@@ -1,4 +1,8 @@
-# Flask React Project
+# LoveCupid![android-chrome-512x512](https://user-images.githubusercontent.com/98840063/205130006-6bb1da1c-105c-45a7-91da-56c3d0ff3ca8.png)
+
+Welcome to my App Academy Solo Capstone Project wiki!
+
+LoveCupid is a full-stack application clone of OkCupid, an online dating website where users can browse other users' profiles, like or dislike other users, and create, update and delete their own profiles.
 
 This is the starter for the Flask React project.
 
