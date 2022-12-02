@@ -5,6 +5,7 @@
 .profile_add {
   color: rgb(255, 200, 0);
   font-size: 32px;
+  margin-top: 50px;
 }
 
 .profile_add:hover {
@@ -70,4 +71,20 @@
 background-color: navy;
 color: white;
 
+}
+.profile_delete{
+  color: rgb(255, 200, 0);
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-top: 60px;
+}
+
+.profile_delete:hover {
+  color: navy;
+}
+
+.profile_uandd {
+  margin-bottom: 20px;
 }

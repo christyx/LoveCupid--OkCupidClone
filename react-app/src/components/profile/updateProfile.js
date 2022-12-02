@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserProfile } from '../../store/session'
 import './profile.css'
@@ -8,14 +8,14 @@ function UpdateProfile() {
 
   const dispatch = useDispatch()
   // const oldprofile = useSelector(state => state.session.profile)
-
-  const [age, setAge] = useState("")
-  const [hometown, setHometown] = useState("")
-  const [work, setWork] = useState("")
-  const [bio, setBio] = useState("")
+  const history = useHistory()
+  const currentuserProfile = useSelector(state => state.session.profile);
+  const [age, setAge] = useState(currentuserProfile?.age)
+  const [hometown, setHometown] = useState(currentuserProfile?.hometown)
+  const [work, setWork] = useState(currentuserProfile?.work)
+  const [bio, setBio] = useState(currentuserProfile?.bio)
   const [errors, setErrors] = useState([])
   const currentuserId = useSelector(state => state.session.user.id);
-
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -34,21 +34,24 @@ function UpdateProfile() {
     }
 
     await dispatch(updateUserProfile(currentuserId, newProfile))
-
+    history.push("/profile")
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <ul>
+    <div className='create_profile_wrapper'>
+      <h2 className='profile_text'>Update Your Most Current Information </h2>
+      <form className='profile_form' onSubmit={handleSubmit}>
+        <div className='signup_error'>
           {errors.map(err => (
-            <li key={err}>{err}</li>
+            <div key={err}>{err}</div>
           ))}
-        </ul>
+        </div>
         <div>
           <div>
             Age:
-            <input placeholder="age"
+            <input
+              className='profile_input'
+              placeholder={age}
               required
               type={'text'}
               value={age}
@@ -57,7 +60,8 @@ function UpdateProfile() {
           </div>
           <div>
             Hometown:
-            <input placeholder="where you spent your childhood"
+            <input className='profile_input'
+              placeholder="where you spent your childhood"
               required
               type={'text'}
               value={hometown}
@@ -66,7 +70,8 @@ function UpdateProfile() {
           </div>
           <div>
             Work:
-            <input placeholder="your job title"
+            <input className='profile_input'
+              placeholder="your job title"
               required
               type={'text'}
               value={work}
@@ -75,18 +80,20 @@ function UpdateProfile() {
           </div>
           <div>
             Bio
-            <input placeholder="introduce yourself"
+            <input className='profile_input_big'
+              placeholder="introduce yourself"
               required
               type={'text'}
               value={bio}
               onChange={e => setBio(e.target.value)}
             />
           </div>
-          <button type="submit">Update Profile</button>
+          <button className='create_button' type="submit">Update Profile</button>
 
         </div>
       </form>
     </div>
   );
+
 }
 export default UpdateProfile;

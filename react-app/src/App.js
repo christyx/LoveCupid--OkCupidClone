@@ -11,9 +11,10 @@ import HomePage from './components/navigation/HomePage';
 import Profile from './components/profile/profile';
 import Like from './components/Likes/Likes'
 import { authenticate } from './store/session';
-import { getAllUsers } from './store/session'
+import { getAllUsers, getUserProfile } from './store/session'
 import { getAllMyLikes } from './store/like'
 import CreateProfile from './components/profile/createProfile'
+import UpdateProfile from './components/profile/updateProfile'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -23,8 +24,9 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      await dispatch(getAllUsers())
-      if(id) await dispatch(getAllMyLikes(id))
+      await dispatch(getAllUsers());
+      if(id) await dispatch(getAllMyLikes(id));
+      if(id) await dispatch(getUserProfile(id));
       setLoaded(true);
     })();
   }, [dispatch, id]);
@@ -54,6 +56,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/profile/add' exact={true} >
           <CreateProfile />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile/edit' exact={true} >
+          <UpdateProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/likes' exact={true} >
           <Like />

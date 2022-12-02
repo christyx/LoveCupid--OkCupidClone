@@ -28,6 +28,7 @@ function UsersList() {
           <img src={user.image}
             alt='userImage'
             className="user_image"
+            onError={e => { e.currentTarget.src = "https://static.vecteezy.com/system/resources/previews/005/129/844/original/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" }}
           />
           <h3 className='ul_name'>{user.firstname}</h3>
         </NavLink>

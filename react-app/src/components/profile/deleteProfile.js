@@ -17,8 +17,8 @@ function DeleteProfile() {
   }
 
   return (
-    <div>
-      <button onClick={handleSubmit} >Delete Profile</button>
+    <div >
+      <button className='profile_delete' onClick={handleSubmit} >Delete Profile</button>
     </div>
   );
 }
