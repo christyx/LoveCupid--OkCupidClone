@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, createUserProfile } from '../../store/session'
 import './profile.css'
@@ -26,9 +26,10 @@ function Profile() {
           onError={e => { e.currentTarget.src = "your_image_not_found_defalt_picture_here"; }}
         />
         <div>
-          <h3 className='userpage_name'>Name: {currentuser.firstname}</h3>
+          <h3 className='profile_name'>Name: {currentuser.firstname}</h3>
+          {/* <button to='/profile/add'>Add A Profile</button> */}
+          <NavLink to='/profile/add' className='profile_add'>Add Profile</NavLink>
         </div>
-        <CreateProfile />
       </div>
     );
   }

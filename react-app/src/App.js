@@ -13,6 +13,7 @@ import Like from './components/Likes/Likes'
 import { authenticate } from './store/session';
 import { getAllUsers } from './store/session'
 import { getAllMyLikes } from './store/like'
+import CreateProfile from './components/profile/createProfile'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,6 +51,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/profile' exact={true} >
           <Profile />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile/add' exact={true} >
+          <CreateProfile />
         </ProtectedRoute>
         <ProtectedRoute path='/likes' exact={true} >
           <Like />
