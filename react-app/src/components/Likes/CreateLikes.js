@@ -27,9 +27,9 @@ function CreateLike(id) {
   }
 
   return (
-    <div className='ul_wrapper'>
-      <i onClick={handleClick} className='icon_like' class="fa-regular fa-heart"></i>
-    </ div>
+    <div className='cl_like'>
+      <i onClick={handleClick} class="fa-solid fa-heart fa-2xl"></i>
+     </ div>
   )
 
 }

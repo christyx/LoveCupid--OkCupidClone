@@ -41,8 +41,17 @@ if (profile) {
         alt='userImage'
         className="userpage_image"
       />
-      <div>
-        <h3 className='userpage_name'>Name: {user.firstname}</h3>
+      <div className='userpage_profile'>
+        <div className='userpage_like'>
+          <h3 className='userpage_name'>{user.firstname}</h3>
+
+            {array.includes(user.id) &&
+              (<DeleteLike id={user.id} />)
+            }
+            {!array.includes(user.id) &&
+              (<CreateLike id={user.id} />)
+            }
+        </div>
         <h4>Age: {profile.age}</h4>
         <h4>Hometown: {profile.hometown}</h4>
         <h4>Work: {profile.work}</h4>
@@ -50,12 +59,12 @@ if (profile) {
 
       </div>
 
-      {array.includes(user.id) &&
+      {/* {array.includes(user.id) &&
         (<DeleteLike id={user.id} />)
       }
       {!array.includes(user.id) &&
         (<CreateLike id={user.id} />)
-      }
+      } */}
 
     </div>
   );

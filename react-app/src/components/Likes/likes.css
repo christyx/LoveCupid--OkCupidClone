@@ -1,0 +1,17 @@
+.cl_like {
+  margin-left: 150px;
+  color: rgb(250, 168, 182);
+}
+
+.cl_like:hover {
+  color: red;
+}
+
+.icon_dislike {
+  margin-left: 150px;
+  color: rgb(250, 168, 182);
+}
+
+.icon_dislike:hover {
+  color: black;
+}
