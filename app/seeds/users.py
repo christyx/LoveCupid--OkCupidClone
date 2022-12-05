@@ -24,6 +24,12 @@ def seed_users():
     mulan = User(
         firstname='Mulan', email='mulan@aa.io', password='password', lookingfor='men', image='https://www.denofgeek.com/wp-content/uploads/2020/09/mulan-boycott.jpeg')
 
+    alexis = User(
+        firstname='Alexis', email='alexis@aa.io', password='password', lookingfor='men', image='https://i.pinimg.com/originals/02/74/c7/0274c7f694599daafffba9f0bf4f9841.png')
+
+    stevie = User(
+        firstname='Stevie', email='stevie@aa.io', password='password', lookingfor='men', image='https://www.cbc.ca/mediacentre/content/images/_largesrc/EmilyHampshire2018.jpg')
+
 
     db.session.add(demo)
     db.session.add(caroline)
@@ -35,7 +41,8 @@ def seed_users():
     db.session.add(rose)
     db.session.add(bonnie)
     db.session.add(sofia)
-
+    db.session.add(alexis)
+    db.session.add(stevie)
     db.session.commit()
 
 

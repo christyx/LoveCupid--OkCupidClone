@@ -30,6 +30,12 @@ def seed_profiles():
     sofia = Profile(
         user_id=10, bio="I am an ambitious career girl, who is a Soul Spin instructor, because of my tenacious ability to scream at people. I have a strong personality. I can stand up by myself and I always stand by what I say. I am a very smart and creative girl but I am also very picky about dating the perfect guy.", work='Personal assistant', age=30, hometown='Florida')
 
+    alexis = Profile(
+        user_id=11, bio="I am generous and kindhearted, embracing the potential of nearly every individual or opportunity I come across.", work='publicist', age=23, hometown='Canada')
+
+    stevie = Profile(
+        user_id=12, bio="I am introverted, have few friends, and dislike social interaction. I am also cynical, often tend to believe the worst will happen. I tend to suffers from low self-esteem and a lack of self confidence.", work='desk clerk', age=26, hometown="Schitt's Creek")
+
     db.session.add(caroline)
     db.session.add(max)
     db.session.add(sophie)
