@@ -21,7 +21,7 @@ const About = () => {
 
           </a>
         </h4>
-        <h4 className='about_text_big'>Creator: Christy Xiu</h4>
+        <h4 className='about_text_big'>Developer: Christy Xiu</h4>
         <h4>
           <a className='about_text_creater' href="https://github.com/christyx" target="_blank" rel="noopener noreferrer">
             <div className='about_iconwithtext'>
