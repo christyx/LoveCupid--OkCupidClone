@@ -62,9 +62,9 @@ def image_valid(form, field):
 
     if not image.__contains__('.png') and not image.__contains__('.jpeg') and not image.__contains__('.jpg'):
         raise ValidationError('Should have .png/.jpeg/.jpg')
-    if len(image) > 25:
+    if len(image) > 500:
         raise ValidationError(
-            'Image Url should be less than 250 charaters.')
+            'Image Url should be less than 500 charaters.')
     # if not image.__beginswith__('http://' or 'https://'):
     #     raise ValidationError("Should begins with 'https://' or 'http://'")
 

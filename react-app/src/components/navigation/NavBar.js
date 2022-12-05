@@ -46,7 +46,10 @@ const NavBar = () => {
           Profile
         </NavLink>
 
-     
+        <NavLink className='nb_right_home' to='/about' exact={true} activeClassName='active'>
+          About
+        </NavLink>
+
 
         <LogoutButton className='nb_right_home' />
       </div>

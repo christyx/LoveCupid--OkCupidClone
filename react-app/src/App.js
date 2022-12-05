@@ -15,6 +15,8 @@ import { getAllUsers, getUserProfile } from './store/session'
 import { getAllMyLikes } from './store/like'
 import CreateProfile from './components/profile/createProfile'
 import UpdateProfile from './components/profile/updateProfile'
+import About from './components/about/about'
+import Footer from './components/about/footer'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -63,10 +65,15 @@ function App() {
         <ProtectedRoute path='/likes' exact={true} >
           <Like />
         </ProtectedRoute>
+        <ProtectedRoute path='/about' exact={true} >
+          <About />
+        </ProtectedRoute>
         <Route path='/' exact={true} >
           <HomePage />
         </Route>
       </Switch>
+
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
