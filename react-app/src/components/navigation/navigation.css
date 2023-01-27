@@ -137,3 +137,13 @@
 .hp_body_wrapper_login {
   background-color: beige;
 }
+
+/* .nav_github {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-left: 150px;
+  margin-right: 150px;
+  height: 80px;
+} */

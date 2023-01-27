@@ -1,0 +1,108 @@
+.ul_blogs {
+  margin: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  border: 2px dotted gray;
+  border-radius: 20px;
+  width: 900px;
+}
+
+.blog_image {
+  object-fit: cover;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  border: 6px solid transparent;
+}
+
+.ul_post {
+  margin: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.blog_name {
+  margin: 50px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-decoration: none;
+  width: 250px;
+  font-size: 40px;
+  color: navy;
+  ;
+}
+
+.blog_name:hover {
+  color: rgb(250, 168, 182);
+}
+
+.blog_post {
+  font-size: 30px;
+}
+
+.blog_delete {
+  background-color: transparent;
+  /* margin-top: 20px;
+   margin-left: 150px; */
+  width: 90px;
+  height: 40px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  font-size: 22px;
+  color: rgb(255, 200, 0);
+  margin-left: 50px;
+}
+
+.blog_delete:hover {
+  border: 2px solid navy;
+}
+
+.blog_create {
+  margin: 50px;
+  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 350px;
+  font-size: 40px;
+  color: navy;
+  border: 2px solid navy;
+  border-radius: 25px;
+}
+
+.blog_create:hover {
+  background-color: navy;
+  color: wheat;
+}
+
+.blog_edit {
+  background-color: transparent;
+  padding: 20px;
+  margin-left: 55px;
+  width: 100px;
+  height: 80px;
+  text-decoration: none;
+  font-size: 22px;
+  color: rgb(255, 200, 0);
+  border: 2px solid transparent;
+  width: 110px;
+  height: 40px;
+  border-radius: 22px;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 15px;
+}
+
+.blog_edit:hover {
+  border: 2px solid navy;
+
+}

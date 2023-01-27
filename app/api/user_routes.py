@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, Flask, render_template, request, session, redirect, make_response
 from flask_login import login_required, current_user
-from app.models import db, User, Like, Profile
+from app.models import db, User, Like, Profile, Blog
 
 user_routes = Blueprint('users', __name__)
 
@@ -74,12 +74,10 @@ def get_user_profile(id):
 
 # ========== Create user's profile ==============
 @user_routes.route("/<int:id>/profile", methods=["POST"])
-@login_required
+#@login_required
 def post_new_profile(id):
     data = request.get_json()
 
-
-    print('&*&*&*&*&*&*',data["bio"])
     new_profile = Profile(
         user_id=id,
         bio=data["bio"],
@@ -90,7 +88,6 @@ def post_new_profile(id):
     db.session.add(new_profile)
     db.session.commit()
     return new_profile.to_dict()
-
 
 # ========== Update user's profile ==============
 @user_routes.route("/<int:id>/profile", methods=["PUT"])
@@ -123,3 +120,63 @@ def delete_new_profile(id):
     db.session.delete(profile)
     db.session.commit()
     return "successfully delete profile"
+
+# ========== Get all blogs ==============
+
+@user_routes.route("/blogs")
+# @login_required
+def get_all_blogs():
+#    blogs = Blog.query.all()
+#    return {'blogs': [blog.to_dict() for blog in blogs]}
+
+   blogs = []
+   data = Blog.query.all()
+   for lst in data:
+       blogs.append(lst.to_dict())
+   return jsonify(blogs)
+
+
+# ========== Create user's blogs ==============
+@user_routes.route("/blogs", methods=["POST"])
+# @login_required
+def post_new_blog():
+    data = request.get_json()
+
+    new_blog = Blog(
+        user_id=current_user.id,
+        user_name=data["user_name"],
+        post=data["post"],
+        image1=data["image1"],
+    )
+    db.session.add(new_blog)
+    db.session.commit()
+    return new_blog.to_dict()
+
+# ========== Update user's blog ==============
+@user_routes.route("/blogs/<int:blog_id>", methods=["PUT"])
+@login_required
+def update_new_blog(blog_id):
+   blog = Blog.query.get(blog_id)
+
+   if not blog:
+      return {
+         "message": "Profile not found",
+         "statusCode": 404,
+      }, 404
+   data = request.get_json()
+   blog.user_id = current_user.id
+   blog.user_name = data["user_name"]
+   blog.post = data["post"]
+   blog.image1 = data["image1"]
+   db.session.commit()
+   return blog.to_dict()
+
+# ========== Detele user's blog ==============
+
+@user_routes.route("/blogs/<int:blog_id>", methods=["DELETE"])
+@login_required
+def delete_new_blog(blog_id):
+    blog = Blog.query.get(blog_id)
+    db.session.delete(blog)
+    db.session.commit()
+    return "successfully delete blog"

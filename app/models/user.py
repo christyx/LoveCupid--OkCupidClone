@@ -18,7 +18,8 @@ class User(db.Model, UserMixin):
 
     likes = db.relationship("Like", back_populates="user")
     profiles = db.relationship("Profile", back_populates="user")
-
+    blogs = db.relationship("Blog", back_populates="user")
+    
     @property
     def password(self):
         return self.hashed_password

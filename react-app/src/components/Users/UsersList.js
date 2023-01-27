@@ -39,10 +39,37 @@ function UsersList() {
   });
 
   return (
+    <div className='all_wrapper'>
+
     <div className='ul_wrapper'>
       <h2 className='ul_text'>Discover : </h2>
       <div className='display_users'>{userComponents}</div>
     </ div>
+     <div className='nav_github'>
+        <h4>
+          <a className='about_text_creater' href="https://github.com/christyx" target="_blank" rel="noopener noreferrer">
+            <div className='about_iconwithtext'>
+              <img className='linkedin_icon' src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt='linkedin'>
+              </img>
+              <div>Github</div>
+            </div>
+
+          </a>
+        </h4>
+
+        <h4>
+          <a className='about_text_creater' href="https://www.linkedin.com/in/zhaoyang-xiu/" target="_blank" rel="noopener noreferrer">
+            <div className='about_iconwithtext'>
+              <img className='linkedin_icon' src="https://cdn-icons-png.flaticon.com/512/49/49408.png" alt='linkedin'>
+              </img>
+              <div>LinkedIn</div>
+            </div>
+
+          </a>
+        </h4>
+      </div>
+
+    </div>
   );
 }
 

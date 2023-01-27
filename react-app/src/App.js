@@ -15,6 +15,9 @@ import { getAllUsers, getUserProfile } from './store/session'
 import { getAllMyLikes } from './store/like'
 import CreateProfile from './components/profile/createProfile'
 import UpdateProfile from './components/profile/updateProfile'
+import Blog from './components/blogs/displayBlog'
+import CreatePost from './components/blogs/createBlog'
+import UpdatePost from './components/blogs/updateBlog'
 import About from './components/about/about'
 import Footer from './components/about/footer'
 
@@ -62,8 +65,18 @@ function App() {
         <ProtectedRoute path='/profile/edit' exact={true} >
           <UpdateProfile />
         </ProtectedRoute>
+
         <ProtectedRoute path='/likes' exact={true} >
           <Like />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs' exact={true} >
+          <Blog />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs/create' exact={true} >
+          <CreatePost />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs/:postId' exact={true} >
+          <UpdatePost />
         </ProtectedRoute>
         <ProtectedRoute path='/about' exact={true} >
           <About />

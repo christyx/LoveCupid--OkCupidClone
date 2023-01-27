@@ -32,7 +32,7 @@ function UpdateProfile() {
       work,
       bio
     }
-
+    console.log("this is", newProfile)
     await dispatch(updateUserProfile(currentuserId, newProfile))
     history.push("/profile")
   }
