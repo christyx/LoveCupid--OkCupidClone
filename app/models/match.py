@@ -2,26 +2,22 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 
 
-class Blog(db.Model, UserMixin):
-    __tablename__ = 'blog'
+class Match(db.Model, UserMixin):
+    __tablename__ = 'matches'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(
-        add_prefix_for_prod('users.id')))
-    user_name = db.Column(db.String(50))
-    post = db.Column(db.String(500))
-    image1 = db.Column(db.String(500))
+        add_prefix_for_prod('users.id')), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
 
-    # user = db.relationship("User", back_populates="blogs")
+    # user = db.relationship("User", back_populates="matches")
 
     def to_dict(self):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'user_name': self.user_name,
-            'post': self.post,
-            'image1': self.image1
+            'score': self.bio
         }
