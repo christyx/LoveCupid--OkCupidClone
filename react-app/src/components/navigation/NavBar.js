@@ -51,6 +51,10 @@ const NavBar = () => {
           Profile
         </NavLink>
 
+          <NavLink className='nb_right_home' to='/match' exact={true} activeClassName='active'>
+            Match Percentage
+          </NavLink>
+
         <NavLink className='nb_right_home' to='/about' exact={true} activeClassName='active'>
           About
         </NavLink>
