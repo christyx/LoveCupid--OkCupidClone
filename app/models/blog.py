@@ -15,7 +15,7 @@ class Blog(db.Model, UserMixin):
     post = db.Column(db.String(500))
     image1 = db.Column(db.String(500))
 
-    # user = db.relationship("User", back_populates="blogs")
+    user = db.relationship("User", back_populates="blogs")
 
     def to_dict(self):
         return {
