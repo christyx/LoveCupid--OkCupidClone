@@ -196,6 +196,7 @@ def delete_new_blog(blog_id):
 # @login_required
 def get_user_match():
     myMatch = Match.query.filter(Match.user_id == current_user.id).all()
+    # myMatch = Match.query.filter(Match.user_id == 3).all()
     matchId = myMatch[0].id
     match = Match.query.get(matchId)
 

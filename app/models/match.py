@@ -19,5 +19,5 @@ class Match(db.Model, UserMixin):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'score': self.bio
+            'score': self.score
         }
