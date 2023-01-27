@@ -10,12 +10,12 @@ class Blog(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(
-        add_prefix_for_prod('users.id')))
+        add_prefix_for_prod('users.id')), nullable=False)
     user_name = db.Column(db.String(50))
     post = db.Column(db.String(500))
     image1 = db.Column(db.String(500))
 
-    user = db.relationship("User", back_populates="blogs")
+    # user = db.relationship("User", back_populates="blogs")
 
     def to_dict(self):
         return {
