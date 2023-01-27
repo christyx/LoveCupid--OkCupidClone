@@ -13,7 +13,7 @@ class Match(db.Model, UserMixin):
         add_prefix_for_prod('users.id')), nullable=False)
     score = db.Column(db.Integer, nullable=False)
 
-    # user = db.relationship("User", back_populates="matches")
+    user = db.relationship("User", back_populates="matches")
 
     def to_dict(self):
         return {
