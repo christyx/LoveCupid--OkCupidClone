@@ -18,6 +18,7 @@ import UpdateProfile from './components/profile/updateProfile'
 import Blog from './components/blogs/displayBlog'
 import CreatePost from './components/blogs/createBlog'
 import UpdatePost from './components/blogs/updateBlog'
+import Match from './components/match/match'
 import About from './components/about/about'
 import Footer from './components/about/footer'
 
@@ -64,6 +65,10 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/profile/edit' exact={true} >
           <UpdateProfile />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/match' exact={true} >
+          <Match />
         </ProtectedRoute>
 
         <ProtectedRoute path='/likes' exact={true} >

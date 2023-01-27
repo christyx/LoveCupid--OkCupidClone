@@ -72,3 +72,28 @@ export const deleteUserMatch = () => async (dispatch) => {
     return response
   }
 }
+
+
+
+export default function reducer(state = initialState, action) {
+  let newState = {};
+  switch (action.type) {
+    case GET_MATCH:
+      newState = { ...state, match: {} }
+      newState.match = action.payload[0]
+      return newState
+    case CREATE_MATCH:
+      newState = { ...state, match: {} }
+      newState.match = action.payload
+      return newState
+    case UPDATE_MATCH:
+      newState = { ...state }
+      newState.match = action.payload
+      return newState
+    case DELETE_MATCH:
+      newState = { ...state, match: {} }
+      return newState
+    default:
+      return state;
+  }
+}
