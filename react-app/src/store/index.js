@@ -3,12 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import likesReducers from './like'
 import blogsReducers from './blog'
-
+import matchReducers from './match'
 
 const rootReducer = combineReducers({
   session,
   likes: likesReducers,
-  blogs: blogsReducers
+  blogs: blogsReducers,
+  match: matchReducers
 });
 
 

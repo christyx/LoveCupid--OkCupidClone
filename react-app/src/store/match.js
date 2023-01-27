@@ -22,11 +22,11 @@ const deleteMatch = () => ({
   type: DELETE_MATCH
 })
 
-const initialState = { match: null };
+// const initialState = { match: null };
 
 
 export const getUserMatch = () => async (dispatch) => {
-  const response = await fetch(`/api/users/match`);
+  const response = await fetch('/api/users/match');
   if (response.ok) {
     const responseData = await response.json();
     await dispatch(getMatch(responseData))
@@ -73,14 +73,14 @@ export const deleteUserMatch = () => async (dispatch) => {
   }
 }
 
+const initialState = { match: {} }
 
-
-export default function reducer(state = initialState, action) {
+export default function matchReducers(state = initialState, action) {
   let newState = {};
   switch (action.type) {
     case GET_MATCH:
       newState = { ...state, match: {} }
-      newState.match = action.payload[0]
+      newState.match = action.payload
       return newState
     case CREATE_MATCH:
       newState = { ...state, match: {} }
@@ -88,7 +88,7 @@ export default function reducer(state = initialState, action) {
       return newState
     case UPDATE_MATCH:
       newState = { ...state }
-      newState.match = action.payload
+      newState.match = action.payload[0]
       return newState
     case DELETE_MATCH:
       newState = { ...state, match: {} }
