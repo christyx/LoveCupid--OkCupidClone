@@ -3,7 +3,7 @@ from flask_login import UserMixin
 
 
 class Blog(db.Model, UserMixin):
-    __tablename__ = 'blog'
+    __tablename__ = 'blogs'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
