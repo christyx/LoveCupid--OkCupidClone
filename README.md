@@ -2,8 +2,9 @@
 
 ## Live Link : https://lovecupid.onrender.com
 
+Welcome to my project repo!
 
-LoveCupid is a full-stack application clone of OkCupid, an online dating website where users can browse other users' profiles, like or dislike other users, and create, update and delete their own profiles.
+LoveCupid is a full-stack application clone of OkCupid, an online dating website where users can browse people's name, picture, age, hometown, work and bio, like or dislike other users, create, update and delete their own profiles, view other users' blogs, post, edit and delete blogs for themselves, answer personality questions to see the match percentage with others, and update and delete the answer of personality questions.
 
 
 ## Built With
