@@ -69,6 +69,6 @@ def downgrade():
     op.drop_table('profiles')
     op.drop_table('matches')
     op.drop_table('likes')
-    op.drop_table('blog')
+    op.drop_table('blogs')
     op.drop_table('users')
     # ### end Alembic commands ###
