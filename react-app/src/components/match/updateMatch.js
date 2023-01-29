@@ -32,28 +32,33 @@ function UpdateMatchScore() {
   }
 
   return (
-    <div className='create_profile_wrapper'>
-      <h2 className='profile_text'> </h2>
-      <form className='profile_form' onSubmit={handleSubmit}>
+    <div className='create'>
+
+      <form className='match_form' onSubmit={handleSubmit}>
         <div className='signup_error'>
           {errors.map(err => (
             <div key={err}>{err}</div>
           ))}
         </div>
-        <div>
-          <div>
-            YOUR SCORE: {currentuserMatch?.score}
+        <div className='match_form_input_create'>
+          <div className='match_form_input_create'>
+            <div>YOUR SCORE: {currentuserMatch?.score}
+              </div>
+
+            <div className='match_form_update_wrapper' >Change your score:</div>
+
             <input
-              className='profile_input'
+              className='match_form_input_update'
               placeholder="new score"
               required
               type={'text'}
               value={score}
               onChange={e => setScore(e.target.value)}
             />
+
           </div>
 
-          <button className='create_button' type="submit">change score</button>
+          <button className='update_button_match' type="submit">update</button>
 
         </div>
       </form>

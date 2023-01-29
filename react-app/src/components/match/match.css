@@ -1,0 +1,135 @@
+.match_q {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 30px;
+}
+
+.match_question {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 30px;
+  font-size: 21px;
+  margin-left: 40px;
+}
+.match_question_base {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+      height: 30px;
+      font-size: 21px;
+}
+.ul_text_match {
+  font-size: 15px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  height: 8px;
+}
+
+.create_match_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_input {
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid navy;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin-bottom: 20px;
+margin-left: 20px;
+/* margin-top: 8px; */
+}
+
+.match_form {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+.create_button_match {
+  background-color: transparent;
+  margin-top: 10px;
+  /* margin-left: 150px; */
+  width: 130px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid navy;
+  font-size: 26px;
+}
+
+.create_button_match:hover {
+  background-color: navy;
+  color: white;
+
+}
+
+.match_form_input {
+  height: 50px;
+    background-color: transparent;
+    /* border: 2px solid navy;
+    border-radius: 7px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.match_form_input_create{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.match_form_update_wrapper {
+  padding-top: 50px;
+}
+
+.update_button_match {
+    background-color: transparent;
+      margin-top: 10px;
+      /* margin-left: 150px; */
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+      border: 2px solid navy;
+      font-size: 26px;
+
+}
+
+.update_button_match:hover {
+  background-color: navy;
+  color: white;
+
+}
+
+.updatedelete_match {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_form_input_update {
+    height: 50px;
+      background-color: transparent;
+      border: 2px solid navy;
+        border-radius: 7px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      margin-bottom: 30px;
+      margin-left: 20px;
+      margin-top: 10px;
+}

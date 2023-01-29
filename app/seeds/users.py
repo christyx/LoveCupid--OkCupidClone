@@ -8,7 +8,7 @@ def seed_users():
     caroline = User(
         firstname='Caroline', email='caroline@aa.io', password='password', lookingfor='men', image='https://seriemaniacos.tv/wp-content/uploads/2012/06/Caroline-Channing.jpg')
     max = User(
-        firstname='Max', email='max@aa.io', password='password', lookingfor='men', image='https://www.thetvaddict.com/wp-content/uploads/2013/01/Untitled-14.jpg')
+        firstname='Max', email='max@aa.io', password='password', lookingfor='men', image='https://static.wikia.nocookie.net/2brokegirls/images/b/b8/Max-From-2-Broke-Girls.jpg')
     sophie = User(
         firstname='Sophie', email='sophie@aa.io', password='password', lookingfor='men', image="https://hopeswonderland.files.wordpress.com/2015/03/sophie-kachinsky-2-broke-girls.jpg")
     serena = User(

@@ -31,19 +31,19 @@ function CreateMatchScore() {
   }
 
   return (
-    <div className='create_profile_wrapper'>
-      <h2 className='profile_text'> </h2>
-      <form className='profile_form' onSubmit={handleSubmit}>
+    <div className='create_match_wrapper'>
+
+      <form className='match_form' onSubmit={handleSubmit}>
         <div className='signup_error'>
           {errors.map(err => (
             <div key={err}>{err}</div>
           ))}
         </div>
-        <div>
-          <div>
+        {/* <div> */}
+        <div className='match_form_input'>
             YOUR SCORE:
             <input
-              className='profile_input'
+              className='match_input'
               placeholder="adding three numbers total"
               required
               type={'text'}
@@ -52,9 +52,9 @@ function CreateMatchScore() {
             />
           </div>
 
-          <button className='create_button' type="submit">Create Match Percentage</button>
+          <button className='create_button_match' type="submit">Submit</button>
 
-        </div>
+        {/* </div> */}
       </form>
     </div>
   );

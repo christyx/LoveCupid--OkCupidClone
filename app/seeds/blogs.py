@@ -60,6 +60,6 @@ def undo_blogs():
         db.session.execute(
             f"TRUNCATE table {SCHEMA}.blogs RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute("DELETE FROM blog")
+        db.session.execute("DELETE FROM blogs")
 
     db.session.commit()

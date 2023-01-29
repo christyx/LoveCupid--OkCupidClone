@@ -62,3 +62,21 @@
 /* .footer_text_creater {
   width: 400px;
 } */
+
+.about_text_icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.about_text_icon_text {
+ margin-left: 15px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ font-size: 22px;
+}
+
+.about_text_icon_wrapper {
+  margin-left: 40px;
+}
