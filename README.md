@@ -38,7 +38,9 @@ LoveCupid is a full-stack application clone of OkCupid, an online dating website
    ```
 ## MVP features list (more details on wiki page)
 * New account creation, login, and demo login
+
 * User Profiles (CRUD)
+
 * Like and dislike other users (CRUD)
 * Blog (CRUD)
 * Personality questions (CRUD)
@@ -59,4 +61,3 @@ LoveCupid is a full-stack application clone of OkCupid, an online dating website
 
 ## Sign in page
 ![Screenshot 2023-01-29 at 4 05 15 PM](https://user-images.githubusercontent.com/98840063/215363840-2651b39e-5c72-41a6-a4c2-bd88675d014c.png)
-

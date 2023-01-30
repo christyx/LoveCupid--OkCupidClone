@@ -1,0 +1,82 @@
+.about_wrapper {
+  /* background-color: white; */
+  margin: 0px;
+}
+
+.about_text_wrapper {
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 29em
+}
+.about_text_big {
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.linkedin_icon {
+  width: 40px;
+  margin: 15px;
+  margin-left: 30px;
+
+}
+
+.about_text_small {
+  font-size: 25px;
+  color: rgb(81, 76, 76);
+  margin: 25px;
+}
+
+.about_iconwithtext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.about_text_creater {
+  text-decoration: none;
+  /* width: 100px; */
+  color: rgb(81, 76, 76);
+  font-size: 30px;
+}
+
+.about_text_creater:hover {
+  color: navy;
+}
+
+.love_icon {
+  width:30px;
+  margin-left: 20px;
+}
+
+.footer_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* .footer_text_creater {
+  width: 400px;
+} */
+
+.about_text_icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.about_text_icon_text {
+ margin-left: 15px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ font-size: 22px;
+}
+
+.about_text_icon_wrapper {
+  margin-left: 40px;
+}

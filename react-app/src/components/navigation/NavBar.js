@@ -28,7 +28,8 @@ const NavBar = () => {
 
 
   return (
-    <nav className='nb_all_login'>
+    <div>
+      <nav className='nb_all_login'>
       <div className='nb_left_wrapper'>
         <NavLink className='nb_left_text' to='/' exact={true} activeClassName='active'>lovecupid</NavLink>
         {/* <div className='nb_left_text'>lovecupid</div> */}
@@ -42,17 +43,52 @@ const NavBar = () => {
           Likes
         </NavLink>
 
+        <NavLink className='nb_right_home' to='/blogs' exact={true} activeClassName='active'>
+          Blogs
+        </NavLink>
+
         <NavLink className='nb_right_home' to='/profile' exact={true} activeClassName='active'>
           Profile
         </NavLink>
 
-     
+          <NavLink className='nb_right_home' to='/match' exact={true} activeClassName='active'>
+            Match Percentage
+          </NavLink>
+
+        <NavLink className='nb_right_home' to='/about' exact={true} activeClassName='active'>
+          About
+        </NavLink>
+
 
         <LogoutButton className='nb_right_home' />
       </div>
+      </nav>
+{/* <div className='nav_github'>
+        <h4>
+          <a className='about_text_creater' href="https://github.com/christyx" target="_blank" rel="noopener noreferrer">
+            <div className='about_iconwithtext'>
+              <img className='linkedin_icon' src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt='linkedin'>
+              </img>
+              <div>Github</div>
+            </div>
 
+          </a>
+        </h4>
 
-    </nav>
+        <h4>
+          <a className='about_text_creater' href="https://www.linkedin.com/in/zhaoyang-xiu/" target="_blank" rel="noopener noreferrer">
+            <div className='about_iconwithtext'>
+              <img className='linkedin_icon' src="https://cdn-icons-png.flaticon.com/512/49/49408.png" alt='linkedin'>
+              </img>
+              <div>LinkedIn</div>
+            </div>
+
+          </a>
+        </h4>
+</div> */}
+
+    </div>
+
   );
 }
 

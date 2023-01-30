@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, createUserProfile } from '../../store/session'
 import './profile.css'
@@ -23,12 +23,13 @@ function Profile() {
         <img src={currentuser.image}
           alt='userImage'
           className="userpage_image"
-          onError={e => { e.currentTarget.src = "your_image_not_found_defalt_picture_here"; }}
+          onError={e => { e.currentTarget.src = "https://static.vecteezy.com/system/resources/previews/005/129/844/original/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" }}
         />
         <div>
-          <h3 className='userpage_name'>Name: {currentuser.firstname}</h3>
+          <h3 className='profile_name'>Name: {currentuser.firstname}</h3>
+          {/* <button to='/profile/add'>Add A Profile</button> */}
+          <NavLink to='/profile/add' className='profile_add'>Add Profile</NavLink>
         </div>
-        <CreateProfile />
       </div>
     );
   }
@@ -36,8 +37,9 @@ function Profile() {
   return (
     <div className='userpage_wrapper'>
       <img src={currentuser.image}
-        alt='userImage'
+        alt='userImageh'
         className="userpage_image"
+        onError={e => { e.currentTarget.src = "https://static.vecteezy.com/system/resources/previews/005/129/844/original/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" }}
       />
       <div>
         <h3 className='userpage_name'>Name: {currentuser.firstname}</h3>
@@ -46,8 +48,12 @@ function Profile() {
         <h4>Work: {profile.work}</h4>
         <h4>Bio: {profile.bio}</h4>
       </div>
-      <UpdateProfile />
-      <DeleteProfile />
+      <div className='profile_uandd'>
+        <NavLink to='/profile/edit' className='profile_add'>Update Profile</NavLink>
+        {/* <UpdateProfile /> */}
+        <DeleteProfile />
+      </div>
+
     </div>
   );
 }

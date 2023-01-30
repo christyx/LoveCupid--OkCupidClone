@@ -103,14 +103,14 @@
 
 .nb_right_signin {
   text-decoration: none;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 3px 15px 3px 15px;
   border-radius: 5px;
   color: black;
 }
 
 .nb_right_signin:hover {
-  color: gray;
+  color: rgb(250, 168, 182)
 }
 
 .nb_all_login {
@@ -137,3 +137,13 @@
 .hp_body_wrapper_login {
   background-color: beige;
 }
+
+/* .nav_github {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-left: 150px;
+  margin-right: 150px;
+  height: 80px;
+} */

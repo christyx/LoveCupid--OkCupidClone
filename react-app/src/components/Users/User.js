@@ -34,31 +34,41 @@ function User() {
   Object.values(likes)?.map((like) => {
     array.push(like.liked_user_id)
   })
-if (profile) {
+  if (profile) {
     return (
-    <div className='userpage_wrapper'>
-      <img src={user.image}
-        alt='userImage'
-        className="userpage_image"
-      />
-      <div>
-        <h3 className='userpage_name'>Name: {user.firstname}</h3>
-        <h4>Age: {profile.age}</h4>
-        <h4>Hometown: {profile.hometown}</h4>
-        <h4>Work: {profile.work}</h4>
-        <h4>Bio: {profile.bio}</h4>
+      <div className='userpage_wrapper'>
+        <img src={user.image}
+          alt='userImage'
+          className="userpage_image"
+          onError={e => { e.currentTarget.src = "https://static.vecteezy.com/system/resources/previews/005/129/844/original/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" }}
+        />
+        <div className='userpage_profile'>
+          <div className='userpage_like'>
+            <h3 className='userpage_name'>{user.firstname}</h3>
 
-      </div>
+            {array.includes(user.id) &&
+              (<DeleteLike id={user.id} />)
+            }
+            {!array.includes(user.id) &&
+              (<CreateLike id={user.id} />)
+            }
+          </div>
+          <h4>Age: {profile.age}</h4>
+          <h4>Hometown: {profile.hometown}</h4>
+          <h4>Work: {profile.work}</h4>
+          <h4>Bio: {profile.bio}</h4>
 
-      {array.includes(user.id) &&
+        </div>
+
+        {/* {array.includes(user.id) &&
         (<DeleteLike id={user.id} />)
       }
       {!array.includes(user.id) &&
         (<CreateLike id={user.id} />)
-      }
+      } */}
 
-    </div>
-  );
+      </div>
+    );
   }
   if (!profile) {
     return (
@@ -66,6 +76,7 @@ if (profile) {
         <img src={user.image}
           alt='userImage'
           className="userpage_image"
+          onError={e => { e.currentTarget.src = "https://static.vecteezy.com/system/resources/previews/005/129/844/original/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" }}
         />
         <div>
           <h3 className='userpage_name'>Name: {user.firstname}</h3>

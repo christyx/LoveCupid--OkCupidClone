@@ -11,8 +11,16 @@ import HomePage from './components/navigation/HomePage';
 import Profile from './components/profile/profile';
 import Like from './components/Likes/Likes'
 import { authenticate } from './store/session';
-import { getAllUsers } from './store/session'
+import { getAllUsers, getUserProfile } from './store/session'
 import { getAllMyLikes } from './store/like'
+import CreateProfile from './components/profile/createProfile'
+import UpdateProfile from './components/profile/updateProfile'
+import Blog from './components/blogs/displayBlog'
+import CreatePost from './components/blogs/createBlog'
+import UpdatePost from './components/blogs/updateBlog'
+import Match from './components/match/match'
+import About from './components/about/about'
+import Footer from './components/about/footer'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,8 +30,9 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      await dispatch(getAllUsers())
-      if(id) await dispatch(getAllMyLikes(id))
+      await dispatch(getAllUsers());
+      if(id) await dispatch(getAllMyLikes(id));
+      if(id) await dispatch(getUserProfile(id));
       setLoaded(true);
     })();
   }, [dispatch, id]);
@@ -51,13 +60,38 @@ function App() {
         <ProtectedRoute path='/profile' exact={true} >
           <Profile />
         </ProtectedRoute>
+        <ProtectedRoute path='/profile/add' exact={true} >
+          <CreateProfile />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile/edit' exact={true} >
+          <UpdateProfile />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/match' exact={true} >
+          <Match />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/likes' exact={true} >
           <Like />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs' exact={true} >
+          <Blog />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs/create' exact={true} >
+          <CreatePost />
+        </ProtectedRoute>
+        <ProtectedRoute path='/blogs/:postId' exact={true} >
+          <UpdatePost />
+        </ProtectedRoute>
+        <ProtectedRoute path='/about' exact={true} >
+          <About />
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <HomePage />
         </Route>
       </Switch>
+
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

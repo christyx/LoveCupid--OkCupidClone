@@ -41,6 +41,7 @@
   width: 150px;
   height: 40px;
   margin: 35px;
+  margin-top: 10px;
   color: navy;
   font-weight: bold;
   background-color: transparent;
@@ -112,4 +113,12 @@
   background-color: rgb(250, 168, 182);
   border-radius: 5px;
 
+}
+.lf_signup{
+  color: navy;
+  margin-left: 10px;
+}
+
+.lf_signup:hover {
+  color: rgb(250, 168, 182);
 }

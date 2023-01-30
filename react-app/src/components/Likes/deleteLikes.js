@@ -27,8 +27,8 @@ function DeleteLike(id) {
   }
 
   return (
-    <div className='ul_wrapper'>
-      <i onClick={handleDelete} className='icon_dislike' class="fa-sharp fa-solid fa-heart-crack"></i>
+    <div className='icon_dislike'>
+      <i onClick={handleDelete} class="fa-sharp fa-solid fa-heart-crack fa-2xl"></i>
 
     </ div>
   )

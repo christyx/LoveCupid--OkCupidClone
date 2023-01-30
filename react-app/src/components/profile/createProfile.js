@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, createUserProfile } from '../../store/session'
 import './profile.css'
@@ -7,6 +7,7 @@ import './profile.css'
 function CreateProfile() {
 
   const dispatch = useDispatch()
+  const history = useHistory()
   const [age, setAge] = useState("")
   const [hometown, setHometown] = useState("")
   const [work, setWork] = useState("")
@@ -18,7 +19,7 @@ function CreateProfile() {
     e.preventDefault()
     setErrors([])
 
-    
+
     if (!Number(age)) return setErrors(['Age must be a number'])
     if (age < 18 || age > 99) return setErrors(['Age must be between 18 to 99'])
     if (hometown.length > 50 || hometown.length < 2) return setErrors(['Hometown needs to be between 2 and 50 characters'])
@@ -34,21 +35,24 @@ function CreateProfile() {
     }
 
     await dispatch(createUserProfile(currentuserId, newProfile))
-
+    history.push("/profile")
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <ul>
+    <div className='create_profile_wrapper'>
+      <h2 className='profile_text'>Let Other Users Know More About You </h2>
+      <form className='profile_form' onSubmit={handleSubmit}>
+        <div className='signup_error'>
           {errors.map(err => (
-            <li key={err}>{err}</li>
+            <div key={err}>{err}</div>
           ))}
-        </ul>
+        </div>
         <div>
           <div>
             Age:
-            <input placeholder="age"
+            <input
+              className='profile_input'
+              placeholder="age"
               required
               type={'text'}
               value={age}
@@ -57,7 +61,8 @@ function CreateProfile() {
           </div>
           <div>
             Hometown:
-            <input placeholder="where you spent your childhood"
+            <input className='profile_input'
+            placeholder="where you spent your childhood"
               required
               type={'text'}
               value={hometown}
@@ -66,7 +71,8 @@ function CreateProfile() {
           </div>
           <div>
             Work:
-            <input placeholder="your job title"
+            <input className='profile_input'
+            placeholder="your job title"
               required
               type={'text'}
               value={work}
@@ -75,14 +81,15 @@ function CreateProfile() {
           </div>
           <div>
             Bio
-            <input placeholder="introduce yourself"
+            <input className='profile_input_big'
+            placeholder="introduce yourself"
               required
               type={'text'}
               value={bio}
               onChange={e => setBio(e.target.value)}
             />
           </div>
-          <button type="submit">Create Profile</button>
+          <button className='create_button' type="submit">Create Profile</button>
 
         </div>
       </form>

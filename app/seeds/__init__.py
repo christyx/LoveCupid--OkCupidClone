@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .likes import seed_likes, undo_likes
 from .profiles import seed_profiles, undo_profiles
+from .blogs import seed_blogs, undo_blogs
+from .matches import seed_matches, undo_matches
 from app.models.db import db, environment, SCHEMA
 
 # Creates a seed group to hold our commands
@@ -20,9 +22,13 @@ def seed():
         undo_users()
         undo_likes()
         undo_profiles()
+        # undo_blogs()
+        # undo_matches()
     seed_users()
     seed_likes()
     seed_profiles()
+    seed_blogs()
+    seed_matches()
     # Add other seed functions here
 
 
@@ -32,4 +38,6 @@ def undo():
     undo_users()
     undo_likes()
     undo_profiles()
+    undo_blogs()
+    undo_matches()
     # Add other undo functions here

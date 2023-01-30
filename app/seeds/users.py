@@ -8,7 +8,7 @@ def seed_users():
     caroline = User(
         firstname='Caroline', email='caroline@aa.io', password='password', lookingfor='men', image='https://seriemaniacos.tv/wp-content/uploads/2012/06/Caroline-Channing.jpg')
     max = User(
-        firstname='Max', email='max@aa.io', password='password', lookingfor='men', image='https://www.thetvaddict.com/wp-content/uploads/2013/01/Untitled-14.jpg')
+        firstname='Max', email='max@aa.io', password='password', lookingfor='men', image='https://static.wikia.nocookie.net/2brokegirls/images/b/b8/Max-From-2-Broke-Girls.jpg')
     sophie = User(
         firstname='Sophie', email='sophie@aa.io', password='password', lookingfor='men', image="https://hopeswonderland.files.wordpress.com/2015/03/sophie-kachinsky-2-broke-girls.jpg")
     serena = User(
@@ -24,6 +24,12 @@ def seed_users():
     mulan = User(
         firstname='Mulan', email='mulan@aa.io', password='password', lookingfor='men', image='https://www.denofgeek.com/wp-content/uploads/2020/09/mulan-boycott.jpeg')
 
+    alexis = User(
+        firstname='Alexis', email='alexis@aa.io', password='password', lookingfor='men', image='https://i.pinimg.com/originals/02/74/c7/0274c7f694599daafffba9f0bf4f9841.png')
+
+    stevie = User(
+        firstname='Stevie', email='stevie@aa.io', password='password', lookingfor='men', image='https://www.cbc.ca/mediacentre/content/images/_largesrc/EmilyHampshire2018.jpg')
+
 
     db.session.add(demo)
     db.session.add(caroline)
@@ -35,7 +41,8 @@ def seed_users():
     db.session.add(rose)
     db.session.add(bonnie)
     db.session.add(sofia)
-
+    db.session.add(alexis)
+    db.session.add(stevie)
     db.session.commit()
 
 
