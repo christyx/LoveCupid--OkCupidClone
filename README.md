@@ -36,14 +36,27 @@ LoveCupid is a full-stack application clone of OkCupid, an online dating website
    flask seed all
    flask run
    ```
-## MVP feature list
+## MVP features list (more details on wiki page)
 * New account creation, login, and demo login
 * User Profiles (CRUD)
 * Like and dislike other users (CRUD)
-* Messaging
-* Personality questions
-* Filter other users by age
-* Match percentages based on question answers
+* Blog (CRUD)
+* Personality questions (CRUD)
+* Match percentage
+
 
 ## Homepage without logging in
 ![Screenshot 2022-12-01 at 2 32 00 PM](https://user-images.githubusercontent.com/98840063/205173112-8b41c4dd-86c1-44dc-98af-82fe6ff3d14d.png)
+
+## Homepage after logging in
+![Screenshot 2023-01-29 at 4 00 52 PM](https://user-images.githubusercontent.com/98840063/215363612-90428862-a7fd-4101-b457-79eb98ea6c28.png)
+
+## Blog page with posts
+![Screenshot 2023-01-29 at 4 02 44 PM](https://user-images.githubusercontent.com/98840063/215363723-1d3459e5-0f16-408e-a416-f26348f4dd0b.png)
+
+## Personality questions and answer submission
+![Screenshot 2023-01-29 at 4 04 00 PM](https://user-images.githubusercontent.com/98840063/215363790-02b6bb80-ef38-4602-95eb-42dfbdaf4a64.png)
+
+## Sign in page
+![Screenshot 2023-01-29 at 4 05 15 PM](https://user-images.githubusercontent.com/98840063/215363840-2651b39e-5c72-41a6-a4c2-bd88675d014c.png)
+
