@@ -25,20 +25,24 @@ function Match() {
 
 
   if (match) {
-      if (!match.score) {
-    return (
-      <div className='match_q'>
-        <h2 className='ul_text'>fill out questions to know your match percentage with others</h2>
-        <h4 className='ul_text' className='ul_text_match'> ** for demonstration purpose, no scientific value</h4>
-        <h3 className='match_question_base' >On a scale of 1 to 10, with 1 being "not at all" and 10 being "very",</h3>
-        <h3 className='match_question' >1. how ORANIZED is your room?</h3>
-        <h3 className='match_question'>2. how important is WINNING to you?</h3>
-        <h3 className='match_question'>3. Generally speaking, how PATIENT are you?</h3>
-        <CreateMatchScore />
-      </div>
+    if (!match.score) {
+      return (
+        <div className='match_q'>
+          <h2 className='ul_text'>fill out questions to know your match percentage with others</h2>
 
-    )
-  }
+          <h3 className='match_question_base' >On a scale of 1 to 10, with 1 being "not at all" and 10 being "very",</h3>
+          <h3 className='match_question' >1. how ORANIZED is your room?</h3>
+          <h3 className='match_question'>2. how important is WINNING to you?</h3>
+          <h3 className='match_question'>3. generally speaking, how PATIENT are you?</h3>
+
+          <h3 className='match_question'>Add your answers of the three questions above and enter the number below</h3>
+
+          <CreateMatchScore />
+          <h4 className='ul_text' className='ul_text_match'> ** for demonstration purpose, no scientific value</h4>
+        </div>
+
+      )
+    }
   }
 
 
@@ -51,11 +55,13 @@ function Match() {
       <h3 className='match_question' >1. how ORANIZED is your room?</h3>
       <h3 className='match_question'>2. how important is WINNING to you?</h3>
       <h3 className='match_question'>3. Generally speaking, how PATIENT are you?</h3>
+      <h3 className='match_question'>Add your answers of the three questions above and enter the number below</h3>
       <div className='updatedelete_match'>
-          <UpdateMatchScore />
-      <button className='update_button_match' onClick={() => deleteMatchScore()} >delete my score</button>
+        <UpdateMatchScore />
+        <button className='update_button_match' onClick={() => deleteMatchScore()} >delete my score</button>
       </div>
-
+      <h4 className='ul_text' className='ul_text_match'> ** for demonstration purpose, no scientific value</h4>
+      
     </div>
 
   );
