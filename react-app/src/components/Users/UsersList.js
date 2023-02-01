@@ -51,8 +51,8 @@ function UsersList() {
     }
     if (user.id !== currentuser.id && currentMatch && !Number(percentage)) {
       return (
-
-        <NavLink className='ul_user' to={`/users/${user.id}`}>
+<div>
+   <NavLink className='ul_user' to={`/users/${user.id}`}>
           <img src={user.image}
             alt='userImage'
             className="user_image"
@@ -61,13 +61,18 @@ function UsersList() {
           <h3 className='ul_name'>{user.firstname}</h3>
           {/* <h4>Match Percentage: {1 - (Math.abs(getRandomArbitrary(5, 25) - currentMatch.score)/ currentMatch.score)}</h4> */}
           {/* <h4>Match Percentage: {Math.abs(1 - (Math.abs((user.id * 3) - currentMatch.score) / currentMatch.score))}</h4> */}
-          <div>
+
+
+        </NavLink>
+          <NavLink className='ul_user' to={`/match`}>
+              <div>
             <h4>Match Percentage: </h4>
             <h4>answer personality </h4>
             <h4>questions first </h4>
           </div>
+          </NavLink>
+</div>
 
-        </NavLink>
 
       );
     }
@@ -105,7 +110,7 @@ function UsersList() {
         </h4>
 
       <div className='about_text_wrapper_user_page'>
-        
+
         <h4 className='about_text_small'>LoveCupid is a full-stack application clone of OkCupid, an online dating website where users can: </h4>
         <div className='about_text_icon_wrapper'>
           <div className='about_text_icon'>
