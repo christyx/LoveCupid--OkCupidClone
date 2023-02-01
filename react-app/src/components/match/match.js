@@ -50,7 +50,7 @@ function Match() {
   return (
     <div className='match_q'>
       <h2 className='ul_text'>fill out questions to know your match percentage with others</h2>
-      <h4 className='ul_text' className='ul_text_match'> ** for demonstration purpose, no scientific value</h4>
+   
       <h3 className='match_question_base' >On a scale of 1 to 10, with 1 being "not at all" and 10 being "very",</h3>
       <h3 className='match_question' >1. how ORANIZED is your room?</h3>
       <h3 className='match_question'>2. how important is WINNING to you?</h3>
@@ -61,7 +61,7 @@ function Match() {
         <button className='update_button_match' onClick={() => deleteMatchScore()} >delete my score</button>
       </div>
       <h4 className='ul_text' className='ul_text_match'> ** for demonstration purpose, no scientific value</h4>
-      
+
     </div>
 
   );

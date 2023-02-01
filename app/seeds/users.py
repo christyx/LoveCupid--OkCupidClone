@@ -32,6 +32,7 @@ def seed_users():
 
 
     db.session.add(demo)
+
     db.session.add(caroline)
     db.session.add(max)
     db.session.add(sophie)
