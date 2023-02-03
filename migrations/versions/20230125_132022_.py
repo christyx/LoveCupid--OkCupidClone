@@ -1,6 +1,6 @@
 """create_users_table
 
-Revision ID: ffdc0a98111c
+Revision ID: 2c51acd5d8ee
 Revises:
 Create Date: 2020-11-20 15:06:02.230689
 
